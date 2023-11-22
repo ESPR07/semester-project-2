@@ -3,8 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Add a description-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/src/img/eclipsebid-favicon.webp"
+    />
     <link href="dist/tailwind.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Eclipsebid</title>
   </head>
-  <body></body>
+  <body class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat">
+    <nav
+      class="flex flex-col md:flex-row justify-between items-center px-5 bg-navColor text-importantElement text-xl border-b-2"
+    >
+      <a
+        href="/index.html"
+        title="Home Page"
+        class="bg-logo bg-contain bg-no-repeat bg-center w-20 h-20"
+      ></a>
+      <a
+        href="/index.html"
+        title="Listings Page"
+        class="px-2 flex h-20 items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_100px] hover:bg-[length:100px_100px] bg-no-repeat hover:text-navColor transition-all duration-500"
+        >Listings</a
+      >
+      <!--Look into adding the above animation in config instead-->
+      <form class="flex w-1/2 mx-3 h-1/2">
+        <input class="w-full" />
+        <button
+          class="bg-importantElement bg-searchIcon bg-no-repeat bg-center text-whiteTone px-3 w-10"
+        ></button>
+      </form>
+      <ul class="flex flex-col md:flex-row gap-5 text-center">
+        <li><a href="#">Start Auction</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </nav>
+    <main class="md:mx-20"></main>
+  </body>
 </html>
