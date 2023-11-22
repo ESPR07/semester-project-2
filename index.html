@@ -40,6 +40,87 @@
         <li><a href="#">Register</a></li>
       </ul>
     </nav>
-    <main class="md:mx-20"></main>
+    <main class="md:mx-20">
+      <h1
+        class="text-center mt-10 text-importantElement text-6xl font-headerFont"
+      >
+        All Biddings
+      </h1>
+      <div class="flex justify-end">
+        <select
+          name="sort"
+          id="sort"
+          class="bg-importantElement py-2 pr-28 pl-2 mr-2 md:mr-0 text-lg rounded-none"
+        >
+          <option selected hidden>Sort By</option>
+          <option value="Latest">Latest</option>
+          <option value="Oldest">Oldest</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5 text-whiteTone">
+        <div class="flex flex-row w-auto bg-navColor">
+          <div
+            class="w-80 h-full bg-avatarPlaceholder bg-cover bg-center"
+          ></div>
+          <div class="flex flex-col justify-between py-2 md:px-7 px-3 w-full">
+            <div class="md:mb-16 mb-7">
+              <p>October 27 2023</p>
+              <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
+            </div>
+            <div
+              class="flex flex-row flex-wrap justify-between border-b-2 text-importantElement mb-1"
+            >
+              <p><span class="text-lightBlue">Seller:</span> Sindre</p>
+              <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
+            </div>
+            <div>
+              <p>Current Bid:</p>
+              <div
+                class="flex justify-between md:text-2xl text-lg flex-wrap mb-2"
+              >
+                <p>$100,000</p>
+                <p>10 Bids</p>
+              </div>
+            </div>
+            <button
+              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue"
+            >
+              Enter Auction
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-row w-auto bg-navColor">
+          <div
+            class="w-80 h-full bg-avatarPlaceholder bg-cover bg-center"
+          ></div>
+          <div class="flex flex-col justify-between py-2 md:px-7 px-3 w-full">
+            <div class="md:mb-16 mb-7">
+              <p>October 27 2023</p>
+              <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
+            </div>
+            <div
+              class="flex flex-row flex-wrap justify-between border-b-2 text-importantElement mb-1"
+            >
+              <p><span class="text-lightBlue">Seller:</span> Sindre</p>
+              <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
+            </div>
+            <div>
+              <p>Current Bid:</p>
+              <div
+                class="flex justify-between md:text-2xl text-lg flex-wrap mb-2"
+              >
+                <p>$100,000</p>
+                <p>10 Bids</p>
+              </div>
+            </div>
+            <button
+              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue"
+            >
+              Enter Auction
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
