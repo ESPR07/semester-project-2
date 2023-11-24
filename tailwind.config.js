@@ -11,6 +11,7 @@ module.exports = {
       importantElement: "#F99417",
       whiteTone: "#F5F5F5",
       lightBlue: "#2696B9",
+      inputBackgroundDark: "#3a3b3c",
     },
     extend: {
       backgroundImage: {
