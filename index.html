@@ -14,7 +14,7 @@
   </head>
   <body class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat">
     <nav
-      class="flex flex-col md:flex-row justify-between items-center px-5 bg-navColor text-importantElement text-xl border-b-2"
+      class="flex flex-col md:flex-row justify-between items-center px-5 bg-navColor text-importantElement text-xl border-b-2 border-importantElement"
     >
       <a
         href="/index.html"
@@ -34,10 +34,28 @@
           class="bg-importantElement bg-searchIcon bg-no-repeat bg-center text-whiteTone px-3 w-10"
         ></button>
       </form>
-      <ul class="flex flex-col md:flex-row gap-5 text-center">
-        <li><a href="#">Start Auction</a></li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Register</a></li>
+      <ul class="h-20 flex flex-col md:flex-row gap-5 items-center text-center">
+        <li class="h-20 flex">
+          <a
+            href="/src/pages/start-auction.html"
+            class="h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500"
+            >Start Auction</a
+          >
+        </li>
+        <li class="h-20 flex">
+          <a
+            href="#"
+            class="h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500"
+            >Login</a
+          >
+        </li>
+        <li class="h-20 flex">
+          <a
+            href="#"
+            class="h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500"
+            >Register</a
+          >
+        </li>
       </ul>
     </nav>
     <main class="md:mx-20">
@@ -71,7 +89,7 @@
               <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
             </div>
             <div
-              class="flex flex-row flex-wrap justify-between border-b-2 text-importantElement mb-1"
+              class="flex flex-row flex-wrap justify-between border-b-2 border-importantElement text-importantElement mb-1"
             >
               <p><span class="text-lightBlue">Seller:</span> Sindre</p>
               <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
@@ -86,7 +104,7 @@
               </div>
             </div>
             <button
-              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue"
+              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue transition duration-500"
             >
               Enter Auction
             </button>
@@ -105,7 +123,7 @@
               <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
             </div>
             <div
-              class="flex flex-row flex-wrap justify-between border-b-2 text-importantElement mb-1"
+              class="flex flex-row flex-wrap justify-between border-b-2 border-importantElement text-importantElement mb-1"
             >
               <p><span class="text-lightBlue">Seller:</span> Sindre</p>
               <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
@@ -120,7 +138,7 @@
               </div>
             </div>
             <button
-              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue"
+              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue transition duration-500"
             >
               Enter Auction
             </button>
