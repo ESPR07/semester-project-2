@@ -1,4 +1,4 @@
-import { loginToggle } from "./loginRegisterToggle.mjs";
+import { loginToggle, registerToggle } from "./loginRegisterToggle.mjs";
 
 export function renderNav() {
   const body = document.querySelector("body");
@@ -9,7 +9,7 @@ export function renderNav() {
   body.prepend(navElement);
 
   const mobileContainer = document.createElement("div");
-  (mobileContainer.className = "flex"), "justify-between", "md:w-20", "w-full";
+  mobileContainer.className = "flex justify-between md:w-20 w-full";
   navElement.append(mobileContainer);
 
   const burgerIcon = document.createElement("div");
@@ -72,6 +72,7 @@ export function renderNav() {
     loginButton.className =
       "h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500";
     loginButton.innerText = "Login";
+    loginButton.addEventListener("click", loginToggle);
     loginContainer.append(loginButton);
 
     const registerContainer = document.createElement("li");
@@ -83,6 +84,7 @@ export function renderNav() {
     registerButton.className =
       "h-full px-2 mb-5 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500";
     registerButton.innerText = "Register";
+    registerButton.addEventListener("click", registerToggle);
     registerContainer.append(registerButton);
   } else {
     const loggedInNav = document.createElement("ul");
@@ -120,7 +122,6 @@ export function renderNav() {
     //   "https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj"
     // );
     const avatarURL = localStorage.getItem("avatar");
-
     const avatarContainer = document.createElement("li");
     avatarContainer.className = "md:h-20 flex items-center";
     loggedInNav.append(avatarContainer);
@@ -139,6 +140,6 @@ export function renderNav() {
 }
 
 export function burgerMenu() {
-  const testBox = document.getElementById("navCollapse");
-  testBox.classList.toggle("collapse");
+  const navElementsContainer = document.getElementById("navCollapse");
+  navElementsContainer.classList.toggle("collapse");
 }
