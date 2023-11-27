@@ -8,6 +8,7 @@ module.exports = {
         avatarPlaceholder: "url('/src/img/placeholder.png')",
         logo: "url('/src/img/eclipsebid-logo.webp')",
         searchIcon: "url('/src/img/search-icon.svg')",
+        burgerIcon: "url('/src/img/burger-icon.svg')",
       },
       fontFamily: {
         headerFont: ["Passion One", "Arial", "Times New Roman"],
