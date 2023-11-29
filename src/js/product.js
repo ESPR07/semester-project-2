@@ -1,18 +1,19 @@
 import { renderNav } from "./components/navbar.mjs";
-import { loginToggle } from "./components/loginRegisterToggle.mjs";
-import { registerToggle } from "./components/loginRegisterToggle.mjs";
 import { burgerMenu } from "./components/navbar.mjs";
+import { loginEvent } from "./api/userStatus/login.mjs";
+import { registerEvent } from "./api/userStatus/register.mjs";
 
 const accessToken = localStorage.getItem("accesstoken");
 
 renderNav();
 
-if (!accessToken) {
-  const registerButton = document.getElementById("registerButton");
-  const loginButton = document.getElementById("loginButton");
-  loginButton.addEventListener("click", loginToggle);
-  registerButton.addEventListener("click", registerToggle);
-}
-
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", loginEvent);
+
+const registerForm = document.getElementById("registerForm");
+
+registerForm.addEventListener("submit", registerEvent);

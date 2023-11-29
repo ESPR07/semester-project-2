@@ -1,5 +1,5 @@
-import { loginURL } from "./urls.mjs";
-import { apiFetch } from "./fetch.mjs";
+import { loginURL } from "../urls.mjs";
+import { apiFetch } from "../fetch.mjs";
 import { setToken } from "./setToken.mjs";
 
 export async function loginEvent(e) {

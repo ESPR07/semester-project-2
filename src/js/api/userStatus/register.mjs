@@ -1,5 +1,5 @@
-import { registerURL } from "./urls.mjs";
-import { apiFetch } from "./fetch.mjs";
+import { registerURL } from "../urls.mjs";
+import { apiFetch } from "../fetch.mjs";
 import { setToken } from "./setToken.mjs";
 
 export async function registerEvent(e) {

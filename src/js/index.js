@@ -1,7 +1,7 @@
 import { renderNav } from "./components/navbar.mjs";
 import { burgerMenu } from "./components/navbar.mjs";
-import { loginEvent } from "./api/login.mjs";
-import { registerEvent } from "./api/register.mjs";
+import { loginEvent } from "./api/userStatus/login.mjs";
+import { registerEvent } from "./api/userStatus/register.mjs";
 
 const accessToken = localStorage.getItem("accesstoken");
 

@@ -1,4 +1,6 @@
-import { loginToggle, registerToggle } from "./loginRegisterToggle.mjs";
+import { logout } from "../api/userStatus/logout.mjs";
+import { loginToggle } from "./loginRegisterToggle.mjs";
+import { registerToggle } from "./loginRegisterToggle.mjs";
 
 export function renderNav() {
   const body = document.querySelector("body");
@@ -28,7 +30,7 @@ export function renderNav() {
   const navMain = document.createElement("div");
   navMain.id = "navCollapse";
   navMain.className =
-    "collapse md:visible flex md:flex-row flex-col w-full justify-between items-center gap-5 overflow-hidden";
+    "collapse md:visible flex md:flex-row flex-col w-full justify-between items-center gap-5 overflow-hidden relative";
   navElement.append(navMain);
 
   const listings = document.createElement("a");
@@ -53,8 +55,6 @@ export function renderNav() {
     "bg-importantElement bg-searchIcon bg-no-repeat bg-center text-whiteTone px-3 w-10";
   searchForm.append(searchButton);
 
-  //Static Local Storage Test
-  // localStorage.setItem("accessToken", "YLOHO");
   const tokenCheck = localStorage.getItem("accessToken");
 
   if (!tokenCheck) {
@@ -116,11 +116,6 @@ export function renderNav() {
     showCredits.innerHTML = `Credits:<br>${credits}`;
     creditsContainer.append(showCredits);
 
-    // Static local Storage Test
-    // localStorage.setItem(
-    //   "avatar",
-    //   "https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj"
-    // );
     const avatarURL = localStorage.getItem("avatar");
     const avatarContainer = document.createElement("li");
     avatarContainer.className = "md:h-20 flex items-center";
@@ -136,6 +131,13 @@ export function renderNav() {
       avatar.classList.add("bg-avatarPlaceholder");
     }
     avatarContainer.append(avatar);
+
+    const logoutButton = document.createElement("Button");
+    logoutButton.className =
+      "h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500 md:mb-0 mb-2";
+    logoutButton.innerText = "Logout";
+    logoutButton.addEventListener("click", logout);
+    loggedInNav.append(logoutButton);
   }
 }
 
