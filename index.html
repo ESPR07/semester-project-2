@@ -13,7 +13,9 @@
     <script type="module" defer src="/src/js/index.js"></script>
     <title>Eclipsebid</title>
   </head>
-  <body class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat">
+  <body
+    class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat pb-10"
+  >
     <div
       id="login"
       class="bg-navColor text-whiteTone p-5 md:w-[30vw] w-[100vw] absolute right-0 border-l-2 border-b-2 border-importantElement translate-x-full transition duration-300"
@@ -103,76 +105,10 @@
           <option value="Oldest">Oldest</option>
         </select>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5 text-whiteTone">
-        <a
-          href="/src/pages/product.html"
-          class="flex flex-row w-auto bg-navColor"
-        >
-          <div
-            class="w-80 h-full bg-avatarPlaceholder bg-cover bg-center"
-          ></div>
-          <div class="flex flex-col justify-between py-2 md:px-7 px-3 w-full">
-            <div class="md:mb-16 mb-7">
-              <p>October 27 2023</p>
-              <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
-            </div>
-            <div
-              class="flex flex-row flex-wrap justify-between border-b-2 border-importantElement text-importantElement mb-1"
-            >
-              <p><span class="text-lightBlue">Seller:</span> Sindre</p>
-              <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
-            </div>
-            <div>
-              <p>Current Bid:</p>
-              <div
-                class="flex justify-between md:text-2xl text-lg flex-wrap mb-2"
-              >
-                <p>$100,000</p>
-                <p>10 Bids</p>
-              </div>
-            </div>
-            <button
-              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue transition duration-500"
-            >
-              Enter Auction
-            </button>
-          </div>
-        </a>
-        <a
-          href="/src/pages/product.html"
-          class="flex flex-row w-auto bg-navColor"
-        >
-          <div
-            class="w-80 h-full bg-avatarPlaceholder bg-cover bg-center"
-          ></div>
-          <div class="flex flex-col justify-between py-2 md:px-7 px-3 w-full">
-            <div class="md:mb-16 mb-7">
-              <p>October 27 2023</p>
-              <h2 class="md:text-4xl text-2xl">Vase Typ. Egyptian</h2>
-            </div>
-            <div
-              class="flex flex-row flex-wrap justify-between border-b-2 border-importantElement text-importantElement mb-1"
-            >
-              <p><span class="text-lightBlue">Seller:</span> Sindre</p>
-              <p><span class="text-lightBlue">Time Left:</span> 03h 02m 30s</p>
-            </div>
-            <div>
-              <p>Current Bid:</p>
-              <div
-                class="flex justify-between md:text-2xl text-lg flex-wrap mb-2"
-              >
-                <p>$100,000</p>
-                <p>10 Bids</p>
-              </div>
-            </div>
-            <button
-              class="bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue transition duration-500"
-            >
-              Enter Auction
-            </button>
-          </div>
-        </a>
-      </div>
+      <div
+        id="cardsContainer"
+        class="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5 text-whiteTone"
+      ></div>
     </main>
   </body>
 </html>
