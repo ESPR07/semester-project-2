@@ -9,11 +9,10 @@ function listingsCardHTML(json) {
     const cardContainer = document.createElement("a");
     cardContainer.href = "/src/pages/product.html" + `?postID=${id}`;
     cardContainer.title = title;
-    cardContainer.className = "flex flex-row w-auto bg-navColor";
+    cardContainer.className = "flex flex-row w-auto bg-navColor max-h-96";
     cardGrid.append(cardContainer);
 
     const cardImage = document.createElement("img");
-    console.log(media[0]);
     cardImage.src = media[0];
     cardImage.onerror = () => {
       cardImage.src = "/src/img/placeholder.png";
@@ -27,7 +26,7 @@ function listingsCardHTML(json) {
     cardContainer.append(cardContent);
 
     const cardDateTitleContainer = document.createElement("div");
-    cardDateTitleContainer.className = "md:mb-16 mb-7";
+    cardDateTitleContainer.className = "md:mb-20 mb-7";
     cardContent.append(cardDateTitleContainer);
 
     const cardDate = document.createElement("p");

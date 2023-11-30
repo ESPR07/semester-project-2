@@ -30,7 +30,7 @@ export function renderNav() {
   const navMain = document.createElement("div");
   navMain.id = "navCollapse";
   navMain.className =
-    "collapse md:visible flex md:flex-row flex-col w-full justify-between items-center gap-5 overflow-hidden relative";
+    "md:flex flex hidden md:flex-row flex-col w-full justify-between items-center gap-5 overflow-hidden relative";
   navElement.append(navMain);
 
   const listings = document.createElement("a");
@@ -143,5 +143,5 @@ export function renderNav() {
 
 export function burgerMenu() {
   const navElementsContainer = document.getElementById("navCollapse");
-  navElementsContainer.classList.toggle("collapse");
+  navElementsContainer.classList.toggle("hidden");
 }
