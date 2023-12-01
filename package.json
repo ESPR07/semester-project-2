@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Semester Project 2 Package",
   "main": "index.js",
   "scripts": {
