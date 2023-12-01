@@ -113,7 +113,7 @@ export function renderNav() {
     showCredits.className = "flex items-center";
     showCredits.href = "/src/pages/profile.html";
     showCredits.title = "Profile Page";
-    showCredits.innerHTML = `Credits:<br>${credits}`;
+    showCredits.innerHTML = `Credits:<br>$${credits}`;
     creditsContainer.append(showCredits);
 
     const avatarURL = localStorage.getItem("avatar");
