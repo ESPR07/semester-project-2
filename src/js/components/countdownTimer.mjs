@@ -1,7 +1,7 @@
 export function countdownTimer(date, placement) {
   const endDate = new Date(date).getTime();
 
-  setInterval(function updateCount() {
+  const counter = setInterval(function updateCount() {
     const currentTime = new Date().getTime();
     const timeDifference = endDate - currentTime;
 
@@ -19,7 +19,7 @@ export function countdownTimer(date, placement) {
     placement.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
     if (timeDifference < 0) {
-      clearInterval();
+      clearInterval(counter);
       placement.innerText = "EXPIRED";
     }
   }, 1000);

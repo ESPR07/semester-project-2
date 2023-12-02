@@ -1,6 +1,10 @@
 import { apiFetch } from "../api/fetch.mjs";
 import { listingsURL } from "../api/urls.mjs";
+import { placeBid } from "../api/userInteractions/placeBid.mjs";
 import { countdownTimer } from "./countdownTimer.mjs";
+import { registerToggle } from "./loginRegisterToggle.mjs";
+
+const tokenCheck = localStorage.getItem("accessToken");
 
 const getURL = new URLSearchParams(window.location.search);
 const getParam = getURL.get("postID");
@@ -60,21 +64,39 @@ function productHTML(json) {
   timeLeftSpan.innerText = "Time Left:";
   timeLeftContainer.prepend(timeLeftSpan);
 
-  const biddingForm = document.createElement("form");
-  biddingForm.className = "flex h-8 mb-2";
-  contentLeftContainer.append(biddingForm);
+  if (tokenCheck) {
+    const biddingForm = document.createElement("form");
+    biddingForm.className = "flex h-8 mb-2";
+    biddingForm.id = "biddingForm";
+    biddingForm.addEventListener("submit", () => {
+      placeBid(biddingInput.value, getParam);
+    });
+    contentLeftContainer.append(biddingForm);
 
-  const biddingInput = document.createElement("input");
-  biddingInput.type = "text";
-  biddingInput.className =
-    "w-full dark:bg-inputBackgroundDark dark:text-whiteTone";
-  biddingForm.append(biddingInput);
+    const biddingInput = document.createElement("input");
+    biddingInput.type = "text";
+    biddingInput.className =
+      "w-full dark:bg-inputBackgroundDark dark:text-whiteTone";
+    biddingInput.addEventListener("keydown", (event) => {
+      if (isNaN(event.key) && event.key !== "Backspace") {
+        event.preventDefault();
+      }
+    });
+    biddingForm.append(biddingInput);
 
-  const biddingButton = document.createElement("button");
-  biddingButton.className =
-    "bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 w-36";
-  biddingButton.innerText = "Place Bid";
-  biddingForm.append(biddingButton);
+    const biddingButton = document.createElement("button");
+    biddingButton.className =
+      "bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 w-36";
+    biddingButton.innerText = "Place Bid";
+    biddingForm.append(biddingButton);
+  } else {
+    const registerButton = document.createElement("button");
+    registerButton.className =
+      "bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 h-8 w-full";
+    registerButton.innerText = "Register to bid";
+    registerButton.addEventListener("click", registerToggle);
+    contentLeftContainer.append(registerButton);
+  }
 
   const bidValueContainer = document.createElement("div");
   bidValueContainer.className = "flex flex-col text-2xl text-whiteTone";
