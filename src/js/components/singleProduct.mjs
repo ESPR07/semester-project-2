@@ -3,6 +3,7 @@ import { listingsURL } from "../api/urls.mjs";
 import { placeBid } from "../api/userInteractions/placeBid.mjs";
 import { countdownTimer } from "./countdownTimer.mjs";
 import { registerToggle } from "./loginRegisterToggle.mjs";
+import { showBids } from "../api/userInteractions/openBids.mjs";
 
 const tokenCheck = localStorage.getItem("accessToken");
 
@@ -129,6 +130,9 @@ function productHTML(json) {
   } else {
     bidsCount.innerText = `${json._count.bids} Bids`;
   }
+  bidsCount.addEventListener("click", () => {
+    showBids(productInfoContainer, json.bids);
+  });
   bidDynamic.append(bidsCount);
 
   const descriptionDiv = document.createElement("div");
