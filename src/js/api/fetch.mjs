@@ -3,8 +3,8 @@ export async function apiFetch(url, option, successHandler) {
     const response = await fetch(url, option);
     const biddingArray = await response.json();
     if (response.ok) {
-      successHandler(biddingArray);
-      return biddingArray;
+      const array = successHandler(biddingArray);
+      return array;
     } else {
       alert(biddingArray.errors[0].message);
     }

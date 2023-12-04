@@ -43,11 +43,13 @@ export function renderNav() {
 
   const searchForm = document.createElement("form");
   searchForm.className = "flex w-1/2 mx-3 h-1/2";
+  searchForm.id = "searchForm";
   navMain.append(searchForm);
 
   const searchInput = document.createElement("input");
   searchInput.className =
     "w-full dark:bg-inputBackgroundDark dark:text-whiteTone";
+  searchInput.id = "searchInput";
   searchForm.append(searchInput);
 
   const searchButton = document.createElement("button");
