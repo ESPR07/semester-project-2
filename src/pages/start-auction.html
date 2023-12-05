@@ -12,7 +12,9 @@
     <script defer type="module" src="/src/js/start-auction.js"></script>
     <title>Start Auction</title>
   </head>
-  <body class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat">
+  <body
+    class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat pb-5"
+  >
     <main class="md:mx-32 md:mt-14 mt-0 flex flex-col justify-center">
       <div class="flex flex-col bg-navColor p-5">
         <h1
@@ -20,7 +22,7 @@
         >
           Make a Post
         </h1>
-        <form class="text-whiteTone">
+        <form id="startForm" class="text-whiteTone">
           <div class="flex flex-col">
             <label for="title" class="text-2xl">Title Input:</label>
             <input
@@ -46,13 +48,6 @@
                 alt="Image Text"
                 class="max-h-[40vh] object-contain object-center"
               />
-              <label for="price" class="text-xl">Starting Price</label>
-              <input
-                type="text"
-                id="price"
-                class="h-8 text-navColor dark:bg-inputBackgroundDark dark:text-whiteTone"
-                placeholder="Starting Price"
-              />
             </div>
             <div class="flex flex-col md:w-1/2 w-full">
               <label for="description" class="text-xl">Description:</label>
@@ -63,13 +58,14 @@
               ></textarea>
               <label for="endTime" class="text-xl">Ends at:</label>
               <input
-                type="date"
+                type="datetime-local"
+                id="endTime"
                 class="h-9 text-navColor dark:bg-inputBackgroundDark dark:text-whiteTone"
-                placeholder="DD-MM-YYYY"
               />
             </div>
           </div>
           <button
+            id="makeAuctionButton"
             class="bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 w-full h-12 mt-4 text-2xl"
           >
             Make Post
