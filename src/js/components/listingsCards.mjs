@@ -3,7 +3,7 @@ import { listingsURL } from "../api/urls.mjs";
 import { reformatTime } from "./reformatTime.mjs";
 import { countdownTimer } from "./countdownTimer.mjs";
 
-const limitedFetch = listingsURL + "?limit=10&_bids=true";
+const limitedFetch = listingsURL + "?limit=10&_bids=true&_active=true";
 const cardGrid = document.getElementById("cardsContainer");
 
 export function listingsCardHTML(json) {

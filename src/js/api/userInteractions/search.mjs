@@ -1,7 +1,7 @@
 import { apiFetch } from "../fetch.mjs";
 import { listingsURL } from "../urls.mjs";
 
-const searchURL = `${listingsURL}?_bids=true&_seller=true`;
+const searchURL = `${listingsURL}?_bids=true&_seller=true&_active=true`;
 
 export async function searchFilter(inputValue) {
   event.preventDefault();
