@@ -21,7 +21,7 @@ const submitButton = document.getElementById("makeAuctionButton");
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
   const title = document.getElementById("title").value;
-  const image = document.getElementById("images").value;
+  const image = document.getElementById("images").value.split(",");
   const description = document.getElementById("description").value;
   const endTime = document.getElementById("endTime").value;
   const endTimeInstance = new Date(endTime);
