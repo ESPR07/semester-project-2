@@ -1,8 +1,13 @@
 import { reformatTime } from "../../components/reformatTime.mjs";
 
 export function showBids(location, bidsArray) {
+  if (document.getElementById("bidsContainer")) {
+    const removeContainer = document.getElementById("bidsContainer");
+    removeContainer.remove();
+  }
   const bidsContainer = document.createElement("table");
   bidsContainer.className = "w-full";
+  bidsContainer.id = "bidsContainer";
   location.append(bidsContainer);
 
   if (bidsArray.length > 0) {

@@ -44,10 +44,11 @@ function productHTML(json) {
   productContent.append(contentLeftContainer);
 
   const image = document.createElement("img");
+  image.className = "max-h-96 object-contain";
   image.src = json.media[0];
-  image.onerror = () => {
+  if (json.media.length <= 0) {
     image.src = "/src/img/placeholder.png";
-  };
+  }
   image.alt = json.title;
   contentLeftContainer.append(image);
 
@@ -139,7 +140,8 @@ function productHTML(json) {
   productContent.append(descriptionDiv);
 
   const descriptionText = document.createElement("p");
-  descriptionText.className = "text-2xl text-whiteTone";
+  descriptionText.className =
+    "text-2xl text-whiteTone md:border-b-0 border-b-2 border-importantElement";
   descriptionText.innerText = json.description;
   descriptionDiv.append(descriptionText);
 }

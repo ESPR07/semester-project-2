@@ -17,9 +17,9 @@ export function listingsCardHTML(json) {
 
     const cardImage = document.createElement("img");
     cardImage.src = media[0];
-    cardImage.onerror = () => {
+    if (media.length <= 0) {
       cardImage.src = "/src/img/placeholder.png";
-    };
+    }
     cardImage.className = "w-1/2 object-cover object-center";
     cardContainer.append(cardImage);
 
