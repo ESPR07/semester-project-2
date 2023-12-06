@@ -20,12 +20,12 @@ export function listingsCardHTML(json) {
     if (media.length <= 0) {
       cardImage.src = "/src/img/placeholder.png";
     }
-    cardImage.className = "w-1/2 object-cover object-center";
+    cardImage.className = "w-1/3 object-cover object-center";
     cardContainer.append(cardImage);
 
     const cardContent = document.createElement("div");
     cardContent.className =
-      "flex flex-col justify-between py-2 md:px-7 px-3 w-1/2";
+      "flex flex-col justify-between py-2 md:px-7 px-3 w-2/3";
     cardContainer.append(cardContent);
 
     const cardDateTitleContainer = document.createElement("div");
