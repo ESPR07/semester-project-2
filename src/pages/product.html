@@ -2,28 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Add a description-->
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
     <link
       rel="icon"
       type="image/x-icon"
       href="/src/img/eclipsebid-favicon.webp"
     />
-    <link href="dist/tailwind.css" rel="stylesheet" />
-    <script type="module" defer src="/src/js/index.js"></script>
-    <script
-      type="module"
-      defer
-      src="/src/js/api/userInteractions/search.mjs"
-    ></script>
-    <title>Eclipsebid</title>
+    <link href="/dist/tailwind.css" rel="stylesheet" />
+    <script type="module" defer src="/src/js/product.js"></script>
+    <title>Product</title>
   </head>
   <body
     class="font-mainFont bg-bodyBackground bg-cover bg-fixed bg-no-repeat pb-10 overflow-x-hidden"
   >
     <div
       id="login"
-      class="bg-navColor text-whiteTone p-5 md:w-[30vw] w-[100vw] fixed md:top-20 top-38 md:right-0 border-l-2 border-b-2 border-importantElement translate-x-full transition duration-300"
+      class="bg-navColor text-whiteTone p-5 md:w-[30vw] w-[100vw] absolute right-0 border-l-2 border-b-2 border-importantElement translate-x-full transition duration-300"
     >
       <p
         class="text-4xl text-importantElement border-b-2 border-importantElement font-headerFont mb-5"
@@ -53,7 +47,7 @@
     </div>
     <div
       id="register"
-      class="bg-navColor text-whiteTone p-5 md:w-[30vw] w-[100vw] fixed md:top-20 top-38 right-0 border-l-2 border-b-2 border-importantElement translate-x-full transition duration-300"
+      class="bg-navColor text-whiteTone p-5 md:w-[30vw] w-[100vw] absolute right-0 border-l-2 border-b-2 border-importantElement translate-x-full transition duration-300"
     >
       <p
         class="text-4xl text-importantElement border-b-2 border-importantElement font-headerFont mb-5"
@@ -93,27 +87,8 @@
         </button>
       </form>
     </div>
-    <main class="md:mx-20">
-      <h1
-        class="text-center mt-10 text-importantElement text-6xl font-headerFont"
-      >
-        All Biddings
-      </h1>
-      <div class="flex justify-end">
-        <select
-          name="sort"
-          id="sort"
-          class="bg-importantElement py-2 pr-28 pl-2 mr-2 md:mr-0 text-lg rounded-none hover:cursor-pointer"
-        >
-          <option selected hidden>Sort By</option>
-          <option value="Latest">Latest</option>
-          <option value="Oldest">Oldest</option>
-        </select>
-      </div>
-      <div
-        id="cardsContainer"
-        class="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5 text-whiteTone"
-      ></div>
+    <main class="md:mx-32 md:mt-3 mt-0 flex flex-col justify-center">
+      <div id="productContainer" class="bg-navColor p-5"></div>
     </main>
   </body>
 </html>
