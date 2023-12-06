@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css --watch",
     "build": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css",
-    "optimize": "npx tailwindcss -o ./dist/tailwind.css --minify"
+    "optimize": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css --minify"
   },
   "repository": {
     "type": "git",
