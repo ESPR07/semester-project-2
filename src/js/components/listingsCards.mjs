@@ -25,11 +25,11 @@ export function listingsCardHTML(json) {
 
     const cardContent = document.createElement("div");
     cardContent.className =
-      "flex flex-col justify-between py-2 md:px-7 px-3 w-full";
+      "flex flex-col justify-between py-2 md:px-7 px-3 w-1/2";
     cardContainer.append(cardContent);
 
     const cardDateTitleContainer = document.createElement("div");
-    cardDateTitleContainer.className = "md:mb-20 mb-7";
+    cardDateTitleContainer.className = "md:mb-20 mb-7 overflow-hidden";
     cardContent.append(cardDateTitleContainer);
 
     const cardDate = document.createElement("p");
@@ -38,7 +38,7 @@ export function listingsCardHTML(json) {
     cardDateTitleContainer.append(cardDate);
 
     const cardTitle = document.createElement("h1");
-    cardTitle.className = "md:text-4xl text-2xl text-clip overflow-hidden";
+    cardTitle.className = "md:text-4xl text-2xl break-words hyphens-auto";
     cardTitle.innerText = title;
     cardDateTitleContainer.append(cardTitle);
 

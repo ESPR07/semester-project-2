@@ -18,7 +18,8 @@ const productContainer = document.getElementById("productContainer");
 
 function productHTML(json) {
   const productTitle = document.createElement("h1");
-  productTitle.className = "md:text-6xl text-4xl mb-3 text-whiteTone";
+  productTitle.className =
+    "md:text-6xl text-4xl mb-3 text-whiteTone break-words";
   productTitle.innerText = json.title;
   productContainer.append(productTitle);
 
