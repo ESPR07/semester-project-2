@@ -12,12 +12,13 @@ export function renderNav() {
   body.prepend(navElement);
 
   const mobileContainer = document.createElement("div");
-  mobileContainer.className = "flex justify-between md:w-20 w-full";
+  mobileContainer.className =
+    "flex justify-between items-center md:w-20 w-full";
   navElement.append(mobileContainer);
 
   const burgerIcon = document.createElement("div");
   burgerIcon.className =
-    "bg-burgerIcon bg-contain bg-no-repeat bg-bottom w-16 h-16 mr- md:hidden flex cursor-pointer";
+    "bg-burgerIcon bg-contain bg-no-repeat bg-center w-12 h-16 mr- md:hidden flex cursor-pointer";
   burgerIcon.id = "navToggle";
   mobileContainer.append(burgerIcon);
 

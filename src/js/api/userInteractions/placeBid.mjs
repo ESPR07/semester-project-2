@@ -17,9 +17,6 @@ export async function placeBid(inputValue, id) {
     }),
   };
 
-  console.log(`${listingsURL}/${id}/bids`);
-  console.log(header);
-
   if (Number(userCredit) >= Number(inputValue)) {
     apiFetch(`${listingsURL}/${id}/bids`, header, () => {
       alert(`Thank you! You have now bid $${inputValue} on this product.`);
@@ -27,6 +24,7 @@ export async function placeBid(inputValue, id) {
       window.location.reload();
     });
   } else {
-    alert("You don't have enough credits to place this bid");
+    const errorMessage = document.getElementById("bidsErrorMessage");
+    errorMessage.classList.toggle("hidden");
   }
 }

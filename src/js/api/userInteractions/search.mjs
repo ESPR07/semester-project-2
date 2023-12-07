@@ -8,8 +8,8 @@ export async function searchFilter(inputValue) {
   const fetchedArray = await apiFetch(searchURL, null, (json) => {
     const newArray = json.filter(
       (listing) =>
-        listing.title.toLowerCase().includes(inputValue) ||
-        listing.seller.name.toLowerCase().includes(inputValue)
+        listing.title.toLowerCase().includes(inputValue.toLowerCase()) ||
+        listing.seller.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     return newArray;
   });

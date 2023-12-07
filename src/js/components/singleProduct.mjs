@@ -47,6 +47,9 @@ function productHTML(json) {
   const image = document.createElement("img");
   image.className = "max-h-96 object-contain";
   image.src = json.media[0];
+  image.onerror = () => {
+    image.src = "/src/img/placeholder.png";
+  };
   if (json.media.length <= 0) {
     image.src = "/src/img/placeholder.png";
   }
@@ -69,7 +72,7 @@ function productHTML(json) {
 
   if (tokenCheck) {
     const biddingForm = document.createElement("form");
-    biddingForm.className = "flex h-8 mb-2";
+    biddingForm.className = "flex h-8";
     biddingForm.id = "biddingForm";
     biddingForm.addEventListener("submit", () => {
       placeBid(biddingInput.value, getParam);
@@ -101,6 +104,12 @@ function productHTML(json) {
     contentLeftContainer.append(registerButton);
   }
 
+  const errorMessage = document.createElement("p");
+  errorMessage.innerText = "Insufficient Credits";
+  errorMessage.className = " hidden text-red-500 text-lg mb-2";
+  errorMessage.id = "bidsErrorMessage";
+  contentLeftContainer.append(errorMessage);
+
   const bidValueContainer = document.createElement("div");
   bidValueContainer.className = "flex flex-col text-2xl text-whiteTone";
   contentLeftContainer.append(bidValueContainer);
@@ -128,7 +137,7 @@ function productHTML(json) {
   if (json._count.bids === 1) {
     bidsCount.innerText = `${json._count.bids} Bid`;
   } else if (json._count.bids === 0) {
-    bidsCount.innerText = "No Bids";
+    bidsCount.innerText = "0 Bids";
   } else {
     bidsCount.innerText = `${json._count.bids} Bids`;
   }
