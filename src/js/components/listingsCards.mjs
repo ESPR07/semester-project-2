@@ -12,11 +12,14 @@ export function listingsCardHTML(json) {
     const cardContainer = document.createElement("a");
     cardContainer.href = "/src/pages/product.html" + `?postID=${id}`;
     cardContainer.title = title;
-    cardContainer.className = "flex flex-row w-auto bg-navColor max-h-96";
+    cardContainer.className = "flex flex-row w-auto bg-navColor max-h-72";
     cardGrid.append(cardContainer);
 
     const cardImage = document.createElement("img");
     cardImage.src = media[0];
+    cardImage.onerror = () => {
+      cardImage.src = "/src/img/placeholder.png";
+    };
     if (media.length <= 0) {
       cardImage.src = "/src/img/placeholder.png";
     }

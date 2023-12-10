@@ -72,7 +72,7 @@ export function renderNav() {
     loggedOutNav.append(loginContainer);
 
     const loginButton = document.createElement("button");
-    loginButton.id = "loginButton";
+    loginButton.id = "loginToggle";
     loginButton.className =
       "h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500";
     loginButton.innerText = "Login";
@@ -135,12 +135,13 @@ export function renderNav() {
     }
     avatar.addEventListener("click", () => {
       userMenu.classList.toggle("md:hidden");
+      updateAvatarContainer.classList.add("hidden");
     });
     avatarContainer.append(avatar);
 
     const userMenu = document.createElement("form");
     userMenu.className =
-      "flex md:hidden flex-col md:absolute relative md:top-[80px] md:right-0 bg-navColor md:border-importantElement md:border-2 md:p-[3vh] pb-3 gap-3";
+      "flex md:hidden flex-col md:absolute relative md:top-[80px] md:right-0 bg-navColor md:border-importantElement md:border-2 md:p-[3vh] pb-3 gap-3 min-w-[300px]";
     userMenu.id = "avatarForm";
     loggedInNav.append(userMenu);
 
@@ -149,14 +150,53 @@ export function renderNav() {
     avatarButton.innerText = "Update Avatar";
     avatarButton.addEventListener("click", (e) => {
       e.preventDefault();
-      let newURL = prompt("Please enter the new avatar URL:", "");
-      if (newURL == null || newURL == "") {
-        return;
-      } else {
-        updateAvatar(newURL);
-      }
+      updateAvatarContainer.classList.toggle("hidden");
     });
     userMenu.append(avatarButton);
+
+    const updateAvatarContainer = document.createElement("div");
+    updateAvatarContainer.className =
+      "flex hidden flex-col absolute md:top-[205px] top-[250px] md:right-0 bg-navColor border-importantElement border-2 p-3 pb-3 gap-3 w-[300px]";
+    updateAvatarContainer.id = "updateAvatarMenu";
+    loggedInNav.append(updateAvatarContainer);
+
+    const updateAvatarClose = document.createElement("div");
+    updateAvatarClose.className = "flex justify-between items-center";
+    updateAvatarContainer.append(updateAvatarClose);
+
+    const updateAvatarLabel = document.createElement("label");
+    updateAvatarLabel.for = "updateAvatarInput";
+    updateAvatarLabel.className = "text-importantElement text-xl";
+    updateAvatarLabel.innerText = "New Avatar URL:";
+    updateAvatarClose.append(updateAvatarLabel);
+
+    const updateAvatarCloseIcon = document.createElement("div");
+    updateAvatarCloseIcon.style.backgroundImage =
+      "url('/src/img/close-icon.svg')";
+    updateAvatarCloseIcon.className =
+      "w-10 h-10 bg-no-repeat bg-cover cursor-pointer";
+    updateAvatarCloseIcon.addEventListener("click", () => {
+      updateAvatarContainer.classList.toggle("hidden");
+    });
+    updateAvatarClose.append(updateAvatarCloseIcon);
+
+    const updateAvatarInput = document.createElement("input");
+    updateAvatarInput.type = "text";
+    updateAvatarInput.name = "updateAvatar";
+    updateAvatarInput.id = "updateAvatarInput";
+    updateAvatarInput.className =
+      "mb-3 dark:bg-inputBackgroundDark dark:text-whiteTone";
+    updateAvatarContainer.append(updateAvatarInput);
+
+    const updateAvatarButton = document.createElement("button");
+    updateAvatarButton.innerText = "Update Avatar";
+    updateAvatarButton.className =
+      "bg-importantElement text-xl text-whiteTone py-1 hover:bg-lightBlue transition duration-500";
+    updateAvatarButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      updateAvatar(updateAvatarInput.value);
+    });
+    updateAvatarContainer.append(updateAvatarButton);
 
     const logoutButton = document.createElement("button");
     logoutButton.className = "hover:underline";

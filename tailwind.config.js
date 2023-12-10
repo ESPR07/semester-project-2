@@ -9,6 +9,7 @@ module.exports = {
         logo: "url('/src/img/eclipsebid-logo.webp')",
         searchIcon: "url('/src/img/search-icon.svg')",
         burgerIcon: "url('/src/img/burger-icon.svg')",
+        closeIcon: "url('/src/img/close-icon.svg')",
       },
       fontFamily: {
         headerFont: ["Passion One", "Arial", "Times New Roman"],
