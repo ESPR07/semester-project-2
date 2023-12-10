@@ -154,7 +154,7 @@ export function renderNav() {
     });
     userMenu.append(avatarButton);
 
-    const updateAvatarContainer = document.createElement("div");
+    const updateAvatarContainer = document.createElement("form");
     updateAvatarContainer.className =
       "flex hidden flex-col absolute md:top-[205px] top-[250px] md:right-0 bg-navColor border-importantElement border-2 p-3 pb-3 gap-3 w-[300px]";
     updateAvatarContainer.id = "updateAvatarMenu";
