@@ -17,6 +17,8 @@ const productURL = `${listingsURL}/${getParam}?_bids=true&_seller=true`;
 const productContainer = document.getElementById("productContainer");
 
 function productHTML(json) {
+  const metaDescription = document.querySelector("meta[name='description']");
+  metaDescription.setAttribute("content", json.description);
   const productTitle = document.createElement("h1");
   productTitle.className =
     "md:text-6xl text-4xl mb-3 text-whiteTone break-words";
@@ -47,6 +49,7 @@ function productHTML(json) {
   const image = document.createElement("img");
   image.className = "max-h-96 object-contain";
   image.src = json.media[0];
+  image.alt = json.title;
   image.onerror = () => {
     image.src = "/src/img/placeholder.png";
   };
@@ -94,12 +97,14 @@ function productHTML(json) {
     biddingButton.className =
       "bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 w-36";
     biddingButton.innerText = "Place Bid";
+    biddingButton.name = "Place Bid";
     biddingForm.append(biddingButton);
   } else {
     const registerButton = document.createElement("button");
     registerButton.className =
       "bg-importantElement hover:bg-lightBlue hover:text-whiteTone transition duration-300 h-8 w-full";
     registerButton.innerText = "Register to bid";
+    registerButton.name = "Register To Bid";
     registerButton.addEventListener("click", registerToggle);
     contentLeftContainer.append(registerButton);
   }
