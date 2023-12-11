@@ -14,6 +14,12 @@ renderSingleProduct();
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
 
+const closeLogin = document.getElementById("loginClose");
+closeLogin.addEventListener("click", loginToggle);
+
+const closeRegister = document.getElementById("register");
+closeRegister.addEventListener("click", registerToggle);
+
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", loginEvent);
