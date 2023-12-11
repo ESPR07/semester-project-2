@@ -17,6 +17,7 @@ export function listingsCardHTML(json) {
 
     const cardImage = document.createElement("img");
     cardImage.src = media[0];
+    cardImage.alt = title;
     cardImage.onerror = () => {
       cardImage.src = "/src/img/placeholder.png";
     };
@@ -89,6 +90,7 @@ export function listingsCardHTML(json) {
     enterAuctionButton.className =
       "bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue text-stone-950 font-semibold transition duration-500";
     enterAuctionButton.innerText = "Enter Auction";
+    enterAuctionButton.name = "Enter Auction";
     cardContent.append(enterAuctionButton);
   });
 }

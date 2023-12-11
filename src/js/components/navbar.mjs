@@ -58,6 +58,7 @@ export function renderNav() {
   const searchButton = document.createElement("button");
   searchButton.className =
     "bg-importantElement bg-searchIcon bg-no-repeat bg-center text-whiteTone px-3 w-10";
+  searchButton.name = "Search Button";
   searchButton.title = "search";
   searchForm.append(searchButton);
 
@@ -78,6 +79,7 @@ export function renderNav() {
     loginButton.className =
       "h-full px-2 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500";
     loginButton.innerText = "Login";
+    loginButton.name = "Open Login Menu";
     loginButton.addEventListener("click", loginToggle);
     loginContainer.append(loginButton);
 
@@ -86,10 +88,11 @@ export function renderNav() {
     loggedOutNav.append(registerContainer);
 
     const registerButton = document.createElement("button");
-    registerButton.id = "registerButton";
+    registerButton.id = "registerMenuToggle";
     registerButton.className =
       "h-full px-2 mb-5 flex items-center bg-gradient-to-r from-importantElement to-importantElement bg-[length:0px_200px] hover:bg-[length:200px_200px] bg-no-repeat hover:text-navColor transition-all duration-500";
     registerButton.innerText = "Register";
+    registerButton.name = "Register Button";
     registerButton.addEventListener("click", registerToggle);
     registerContainer.append(registerButton);
   } else {
@@ -150,6 +153,7 @@ export function renderNav() {
     const avatarButton = document.createElement("button");
     avatarButton.className = "hover:underline";
     avatarButton.innerText = "Update Avatar";
+    avatarButton.name = "Open Avatar Menu";
     avatarButton.addEventListener("click", (e) => {
       e.preventDefault();
       updateAvatarContainer.classList.toggle("hidden");
@@ -193,6 +197,7 @@ export function renderNav() {
 
     const updateAvatarButton = document.createElement("button");
     updateAvatarButton.innerText = "Update Avatar";
+    updateAvatarButton.name = "Update Avatar Button";
     updateAvatarButton.className =
       "bg-importantElement text-xl text-whiteTone py-1 hover:bg-lightBlue transition duration-500";
     updateAvatarButton.addEventListener("click", (e) => {
@@ -204,6 +209,7 @@ export function renderNav() {
     const logoutButton = document.createElement("button");
     logoutButton.className = "hover:underline";
     logoutButton.innerText = "Logout";
+    logoutButton.name = "Logout Button";
     logoutButton.addEventListener("click", logout);
     userMenu.append(logoutButton);
   }
