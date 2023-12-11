@@ -81,6 +81,7 @@ function productHTML(json) {
 
     const biddingInput = document.createElement("input");
     biddingInput.type = "text";
+    biddingInput.ariaLabel = "Bidding Amount";
     biddingInput.className =
       "w-full dark:bg-inputBackgroundDark dark:text-whiteTone";
     biddingInput.addEventListener("keydown", (event) => {

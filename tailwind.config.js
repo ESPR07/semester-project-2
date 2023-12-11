@@ -19,7 +19,7 @@ module.exports = {
         navColor: "#363062",
         importantElement: "#F99417",
         whiteTone: "#F5F5F5",
-        lightBlue: "#2696B9",
+        lightBlue: "#2CACD4",
         inputBackgroundDark: "#3a3b3c",
       },
     },

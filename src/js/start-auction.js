@@ -32,3 +32,10 @@ auctionForm.addEventListener("submit", (e) => {
   const endTimeInstance = new Date(endTime);
   makeListing(title, image, description, endTimeInstance);
 });
+
+const imageInput = document.getElementById("images");
+imageInput.addEventListener("focusout", () => {
+  const value = document.getElementById("images").value.split(",");
+  const image = document.querySelector("img");
+  image.src = value;
+});

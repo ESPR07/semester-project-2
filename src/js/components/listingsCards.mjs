@@ -24,6 +24,7 @@ export function listingsCardHTML(json) {
       cardImage.src = "/src/img/placeholder.png";
     }
     cardImage.className = "w-1/3 object-cover object-center";
+    cardImage.alt = title;
     cardContainer.append(cardImage);
 
     const cardContent = document.createElement("div");
@@ -86,7 +87,7 @@ export function listingsCardHTML(json) {
 
     const enterAuctionButton = document.createElement("button");
     enterAuctionButton.className =
-      "bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue transition duration-500";
+      "bg-importantElement text-xl rounded-md py-1 hover:bg-lightBlue text-stone-950 font-semibold transition duration-500";
     enterAuctionButton.innerText = "Enter Auction";
     cardContent.append(enterAuctionButton);
   });
