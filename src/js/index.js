@@ -5,6 +5,10 @@ import { registerEvent } from "./api/userStatus/register.mjs";
 import { renderListingsCard } from "./components/listingsCards.mjs";
 import { listingsCardHTML } from "./components/listingsCards.mjs";
 import { searchFilter } from "./api/userInteractions/search.mjs";
+import {
+  loginToggle,
+  registerToggle,
+} from "./components/loginRegisterToggle.mjs";
 
 const accessToken = localStorage.getItem("accesstoken");
 const cardContainer = document.getElementById("cardsContainer");
@@ -14,6 +18,12 @@ renderListingsCard();
 
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
+
+const closeLogin = document.getElementById("loginClose");
+closeLogin.addEventListener("click", loginToggle);
+
+const closeRegister = document.getElementById("register");
+closeRegister.addEventListener("click", registerToggle);
 
 const loginForm = document.getElementById("loginForm");
 

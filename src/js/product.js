@@ -3,6 +3,8 @@ import { burgerMenu } from "./components/navbar.mjs";
 import { loginEvent } from "./api/userStatus/login.mjs";
 import { registerEvent } from "./api/userStatus/register.mjs";
 import { renderSingleProduct } from "./components/singleProduct.mjs";
+import { registerToggle } from "./components/loginRegisterToggle.mjs";
+import { loginToggle } from "./components/loginRegisterToggle.mjs";
 
 const accessToken = localStorage.getItem("accesstoken");
 
@@ -11,6 +13,12 @@ renderSingleProduct();
 
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
+
+const closeLogin = document.getElementById("loginClose");
+closeLogin.addEventListener("click", loginToggle);
+
+const closeRegister = document.getElementById("register");
+closeRegister.addEventListener("click", registerToggle);
 
 const loginForm = document.getElementById("loginForm");
 
