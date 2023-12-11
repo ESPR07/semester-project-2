@@ -52,12 +52,14 @@ export function renderNav() {
   searchInput.className =
     "w-full dark:bg-inputBackgroundDark dark:text-whiteTone";
   searchInput.id = "searchInput";
+  searchInput.ariaLabel = "Search Value";
   searchForm.append(searchInput);
 
   const searchButton = document.createElement("button");
   searchButton.className =
     "bg-importantElement bg-searchIcon bg-no-repeat bg-center text-whiteTone px-3 w-10";
   searchButton.name = "Search Button";
+  searchButton.title = "search";
   searchForm.append(searchButton);
 
   const tokenCheck = localStorage.getItem("accessToken");
@@ -169,7 +171,7 @@ export function renderNav() {
     updateAvatarContainer.append(updateAvatarClose);
 
     const updateAvatarLabel = document.createElement("label");
-    updateAvatarLabel.for = "updateAvatarInput";
+    updateAvatarLabel.htmlFor = "updateAvatarInput";
     updateAvatarLabel.className = "text-importantElement text-xl";
     updateAvatarLabel.innerText = "New Avatar URL:";
     updateAvatarClose.append(updateAvatarLabel);
@@ -186,6 +188,7 @@ export function renderNav() {
 
     const updateAvatarInput = document.createElement("input");
     updateAvatarInput.type = "text";
+    updateAvatarInput.ariaLabel = "New Avatar URL";
     updateAvatarInput.name = "updateAvatar";
     updateAvatarInput.id = "updateAvatarInput";
     updateAvatarInput.className =
