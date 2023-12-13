@@ -14,11 +14,11 @@ renderSingleProduct();
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
 
-const closeLogin = document.getElementById("loginClose");
-closeLogin.addEventListener("click", loginToggle);
+const loginClose = document.getElementById("loginClose");
+loginClose.addEventListener("click", loginToggle);
 
-const closeRegister = document.getElementById("register");
-closeRegister.addEventListener("click", registerToggle);
+const registerClose = document.getElementById("registerClose");
+registerClose.addEventListener("click", registerToggle);
 
 const loginForm = document.getElementById("loginForm");
 
