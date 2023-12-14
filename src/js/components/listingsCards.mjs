@@ -1,10 +1,6 @@
 import { apiFetch } from "../api/fetch.mjs";
-import { listingsURL } from "../api/urls.mjs";
 import { reformatTime } from "./reformatTime.mjs";
 import { countdownTimer } from "./countdownTimer.mjs";
-
-const limitedFetch =
-  listingsURL + "?sort=created&sortOrder=desc&_bids=true&_active=true";
 const cardGrid = document.getElementById("cardsContainer");
 
 export function listingsCardHTML(json) {
@@ -95,6 +91,7 @@ export function listingsCardHTML(json) {
   });
 }
 
-export async function renderListingsCard() {
-  apiFetch(limitedFetch, null, listingsCardHTML);
+export async function renderListingsCard(url) {
+  cardGrid.innerText = "";
+  apiFetch(url, null, listingsCardHTML);
 }
