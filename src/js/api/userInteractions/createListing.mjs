@@ -14,7 +14,7 @@ export function makeListing(title, image, description, endTime) {
       title: title,
       description: description,
       tags: [],
-      media: [image],
+      media: image,
       endsAt: endTime,
     }),
   };
