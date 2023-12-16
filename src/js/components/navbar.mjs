@@ -132,7 +132,8 @@ export function renderNav() {
     loggedInNav.append(avatarContainer);
 
     const avatar = document.createElement("div");
-    avatar.className = "flex w-16 h-16 bg-contain rounded-full cursor-pointer";
+    avatar.className =
+      "flex w-16 h-16 bg-cover bg-center bg-no-repeat rounded-full cursor-pointer";
     if (avatarURL) {
       avatar.style.backgroundImage = `url(${avatarURL})`;
     } else {

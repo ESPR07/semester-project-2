@@ -22,5 +22,7 @@ export async function registerEvent(e) {
     }),
   };
 
-  apiFetch(registerURL, fetchRequest, setToken);
+  apiFetch(registerURL, fetchRequest, () => {
+    alert("Registration Successful!");
+  });
 }

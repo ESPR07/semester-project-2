@@ -23,6 +23,7 @@ auctionForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const title = document.getElementById("title").value;
   const image = document.getElementById("images").value.split(",");
+  console.log(image);
   if (!imageURLTest(image) === true) {
     alert("Invalid URL('s)");
     return;
@@ -36,6 +37,7 @@ auctionForm.addEventListener("submit", (e) => {
 const imageInput = document.getElementById("images");
 imageInput.addEventListener("focusout", () => {
   const value = document.getElementById("images").value.split(",");
+  console.log(value);
   const image = document.querySelector("img");
   image.src = value;
 });
