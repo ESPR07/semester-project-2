@@ -9,12 +9,16 @@ import {
   loginToggle,
   registerToggle,
 } from "./components/loginRegisterToggle.mjs";
+import { listingsURL } from "./api/urls.mjs";
 
-const accessToken = localStorage.getItem("accesstoken");
 const cardContainer = document.getElementById("cardsContainer");
+const latestFetch =
+  listingsURL + "?sort=created&sortOrder=desc&_bids=true&_active=true&limit=10";
+const oldestFetch =
+  listingsURL + "?sort=created&sortOrder=asc&_bids=true&_active=true&limit=10";
 
 renderNav();
-renderListingsCard();
+renderListingsCard(latestFetch);
 
 const navToggle = document.getElementById("navToggle");
 navToggle.addEventListener("click", burgerMenu);
@@ -39,4 +43,14 @@ searchForm.addEventListener("submit", async () => {
   const filteredArray = await searchFilter(searchInput);
   cardContainer.innerHTML = "";
   listingsCardHTML(filteredArray);
+});
+
+const sortByMenu = document.getElementById("sort");
+sortByMenu.addEventListener("change", (event) => {
+  const currentValue = event.target.value;
+  if (currentValue === "Latest") {
+    renderListingsCard(latestFetch);
+  } else if (currentValue === "Oldest") {
+    renderListingsCard(oldestFetch);
+  }
 });
