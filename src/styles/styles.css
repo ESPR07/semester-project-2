@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Passion One";
+  src: url(/src/fonts/PassionOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(/src/fonts/Ubuntu-Regular.ttf);
+}

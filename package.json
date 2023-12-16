@@ -1,0 +1,29 @@
+{
+  "name": "semester-project-2",
+  "version": "1.0.0",
+  "description": "Semester Project 2 Package",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css --watch",
+    "build": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css",
+    "optimize": "npx tailwindcss -i ./src/styles/styles.css -o ./dist/tailwind.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ESPR07/semester-project-2.git"
+  },
+  "keywords": [
+    "Exam",
+    "Auction",
+    "Framework"
+  ],
+  "author": "Sindre Strømsæther Derås",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ESPR07/semester-project-2/issues"
+  },
+  "homepage": "https://github.com/ESPR07/semester-project-2#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
